@@ -183,3 +183,62 @@ body {
   background-position: top center;
   z-index: 1;
 }
+/* Estilizando o container de bebidas */
+.list {
+  margin: 5rem;
+  display: flex;           /* Usando flexbox para exibir as imagens em uma fileira */
+  flex-wrap: wrap;         /* Permite que as imagens quebrem para a linha seguinte, caso a largura da tela não seja suficiente */
+  gap: 10px;               /* Espaçamento entre as imagens */
+  justify-content: flex-start; /* Alinha as imagens no começo (à esquerda) */
+}
+
+/* Estilizando cada bebida (imagem) */
+.drink {
+  position: relative; /* Necessário para posicionar a camada de sobreposição */
+  width: 300px;       /* Define o tamanho das imagens */
+  height: 400px;      /* Altura fixa para as imagens */
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+  overflow: hidden;   /* Garante que a sobreposição não ultrapasse os limites da imagem */
+}
+
+/* Camada de sobreposição (cover) */
+.drink::before {
+  content: 'Juice'; /* Necessário para o pseudo-elemento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f7f7; /* Cor do fundo */
+  opacity: 1; /* Totalmente opaco */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center;     /* Alinha o conteúdo no centro verticalmente */
+  color: #e8e8ec;             /* Cor do texto da mensagem */
+  font-size: 3.2rem;       /* Tamanho da fonte da mensagem */
+  font-weight:lighter;     /* Peso da fonte para destacar */
+  text-align: center;      /* Alinha o texto ao centro */
+  transition: opacity 0.5s ease-out; /* Transição suave */
+}
+
+/* Estilizando a imagem dentro da bebida */
+.drink img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz com que a imagem ocupe a área sem distorcer */
+  display: block; /* Remove qualquer espaçamento indesejado abaixo da imagem */
+  border-radius: 8px; /* Borda arredondada para a imagem */
+  transition: opacity 0.5s ease-out; /* Animação suave para transição */
+}
+
+/* Ao passar o mouse sobre a bebida, revelar a imagem */
+.drink:hover::before {
+  opacity: 0; /* A camada de sobreposição desaparece */
+}
+
+.drink:hover img {
+  opacity: 1; /* Torna a imagem visível */
+}
+
+
+
