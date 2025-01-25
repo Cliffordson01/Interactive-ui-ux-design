@@ -38,7 +38,7 @@ A interface visual é projetada para ser intuitiva e envolvente, com um design c
 
 1. Clone este repositório para seu ambiente local:
     ```bash
-    git clone https://github.com/usuario/projeto-interativo.git
+    git clone https://github.com/Cliffordson01/Interactive-ui-ux-design.git
     ```
 2. Abra o arquivo `index.html` em seu navegador para visualizar a interface interativa.
 3. O arquivo CSS (`style.css`) contém todas as configurações de estilo, e o arquivo JavaScript (`script.js`) lida com as interações de movimento e clique.
